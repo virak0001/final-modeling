@@ -1,6 +1,6 @@
 # Cambodia Road Crash Portal
 
-**Live portal:** _add your Streamlit Community Cloud link here after deploying (see "Deploy" below)_
+**Live portal:** https://cambodia-crash.xyz
 
 A spatio-temporal data portal on road crashes in Cambodia, built from road-crash reports in Khmer-language news, the
 2019 census and World Bank indicators for the 11 ASEAN members.
@@ -85,14 +85,20 @@ tests/                          tests for validate.py, fetch.py and pipeline.py
 
 ## Deploy
 
-1. Push this repository to GitHub (public).
-2. On [share.streamlit.io](https://share.streamlit.io), create an app from the repository with main file `app.py`. Under
-   *Advanced settings*, pick Python 3.14 (the versions in `requirements.txt` were tested on 3.14; if it is not offered, choose the
-   newest available).
-3. Paste the app link at the top of this README.
+The portal runs in a Docker container (`Dockerfile`) on a small AWS Lightsail server, behind Caddy, which handles HTTPS.
+DNS for `cambodia-crash.xyz` is in Route 53. To ship a new version after pushing to `main`:
 
-No API keys are needed. If one is ever added, put it in the host's *Secrets* settings, never in the code.
-Uploads on the free host live on a disk that resets when the app restarts; to keep an upload, commit its file from `data/uploads/`.
+```bash
+ssh ubuntu@<server> 'cd /opt/crash-portal && git pull && sudo docker build -q -t crash-portal . &&
+  sudo docker rm -f crash-portal && sudo docker run -d --name crash-portal --restart unless-stopped \
+  --network smtp-box_default --memory 350m --memory-swap 1500m \
+  -v crash-portal-uploads:/app/data/uploads crash-portal'
+```
+
+Uploaded files live in the `crash-portal-uploads` Docker volume, so they survive restarts and new versions.
+
+No API keys are needed. If one is ever added, pass it to the container as an environment variable, never in the code.
+To make an upload part of the repository itself, copy its file out of the volume and commit it under `data/uploads/`.
 
 ## Limits
 
