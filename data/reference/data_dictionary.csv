@@ -1,0 +1,46 @@
+table,column,type,unit,meaning,source
+crashes_public,origin,text,-,"news dataset, or upload: <file name>",pipeline
+crashes_public,doc_id,integer,-,Row number in the team's source workbook,news dataset
+crashes_public,event_id,text,-,Same ID = same crash reported more than once,src/extract_accidents.py
+crashes_public,analysis_ready,0/1,-,"1 = single crash in Cambodia, first record of its crash, text appears original",src/extract_accidents.py
+crashes_public,record_type,category,-,"Crash report, Statistics/aggregate, Follow-up/legal, Foreign/celebrity news, Feature/policy, Off-topic",src/extract_accidents.py
+crashes_public,text_provenance,category,-,"Appears original, Suspected AI summary/rewrite, Split from multi-crash article",src/extract_accidents.py
+crashes_public,incident_date,date,day,Date of the crash; publication date used as a proxy when the text gives none,news text
+crashes_public,incident_date_source,category,-,"Article text, Publication date (proxy), Partial (year/month only), Uploaded",src/extract_accidents.py
+crashes_public,year / month,integer,-,Calendar parts of incident_date,pipeline
+crashes_public,time_of_day,category,-,"Morning (05-11), Afternoon (12-16), Evening (17-20), Night (21-04), Unknown",news text
+crashes_public,province,category,-,"Crash province, portal spelling; joined to pro_code through data/reference/province_names.csv",news text
+crashes_public,province_confidence,category,-,"High = full administrative chain, Medium = named once, Low = weak mention",src/extract_accidents.py
+crashes_public,road_type,category,-,"National road, Expressway, City street, Local road, Unclassified, Unknown",news text
+crashes_public,road_name,text,-,"Road named in the article, e.g. NR4",news text
+crashes_public,severity,category,-,"Fatal, Injury, Property damage only, Not stated (worst outcome reported)",news text
+crashes_public,deaths,integer,people,Deaths reported for this crash,news text
+crashes_public,injuries_total,integer,people,Injured people reported for this crash,news text
+crashes_public,veh_*,0/1,-,Vehicle or road-user type mentioned (motorcycle; car; heavy truck; bus or van; tuk-tuk; bicycle; pedestrian; tractor),news text
+crashes_public,factor_*,0/1,-,Contributing factor stated in the article (speeding; drunk driving; ...); 0 means not stated,news text
+crashes_public,collision_type,text,-,Collision types named in the article,news text
+census2019_province,pro_code,integer,-,Official province code (NIS); join key for every province table,ODC census 2019
+census2019_province,population_2019,integer,people,Census 2019 final population total,ODC census 2019
+census2019_province,households,integer,households,Census 2019 households,ODC census 2019
+census2019_province,household_size,number,people per household,Census 2019 mean household size,ODC census 2019
+census2019_province,area_km2,number,km2,Province area,ODC census 2019
+census2019_province,density_per_km2,number,people per km2,Population density,ODC census 2019
+worldbank_asean,road_deaths_per_100k,number,deaths per 100000 people,SH.STA.TRAF.P5 - WHO modelled road traffic mortality,World Bank API
+worldbank_asean,population,integer,people,SP.POP.TOTL,World Bank API
+worldbank_asean,urban_share_pct,number,% of population,SP.URB.TOTL.IN.ZS,World Bank API
+worldbank_asean,gdp_per_capita_usd,number,current US$,NY.GDP.PCAP.CD,World Bank API
+official_totals,official_deaths / official_crashes / official_injured,integer,people / crashes,"Annual national totals of the National Road Safety Committee (NRSC), typed in from the ministry or state-media page named in source_url; serious/minor injuries where the page splits them",reference file
+province panel (derived),person_years,number,person-years,"Sum over the period of census 2019 population x (national population in year / national population in 2019). Claim: provinces grew at the national rate.",pipeline
+province panel (derived),reports_per_100k_yr,number,reports per 100000 person-years,"Claim: comparing reports per resident removes the effect of province size, so what is left is coverage plus risk.",pipeline
+province panel (derived),deaths_per_100k_yr,number,deaths per 100000 person-years,Reported deaths per resident per year,pipeline
+province panel (derived),fatal_share_pct,number,% of reports with known severity,"Claim: a share is not affected by how many crashes journalists cover, only by which. Hidden below 10 reports.",pipeline
+province panel (derived),national_road_share_pct / night_share_pct / motorcycle_share_pct,number,%,Share of a province's reports on national roads / at night / involving a motorcycle,pipeline
+rare event (derived),multi_fatal,0/1,-,Target: crash with two or more deaths,pipeline
+rare event (derived),day_type,category,-,"Weekday or Weekend. Claim: weekend traffic and drinking differ.",pipeline
+rare event (derived),season,category,-,"Rainy (May-Oct) or Dry (Nov-Apr). Claim: wet roads change crash outcomes.",pipeline
+rare event (derived),province_group,category,-,"Five most-reported training provinces, else Other. Claim: place stands in for road speed and hospital distance.",pipeline
+rare event (derived),n_vehicle_types,integer,count,"Number of vehicle types mentioned. Claim: more kinds of vehicle means a bigger crash.",pipeline
+rare event (derived),col_*,0/1,-,Collision type flags (rollover; rear-end; head-on; side; ran off road; fixed object; pedestrian),pipeline
+time series (derived),monthly reports / deaths,number,per month,Crashes placed in the month of incident_date; empty months are 0,pipeline
+time series (derived),change on a year earlier,number,%,"(month - same month last year) / same month last year. Claim: compares like seasons.",pipeline
+time series (derived),rolling 3-month fatal share,number,%,"Claim: three months smooth out single large crashes. Hidden below 5 reports.",pipeline

@@ -1,0 +1,45 @@
+name: Scheduled retrieval
+
+on:
+  schedule:
+    - cron: "0 2 * * 1"   # every Monday 02:00 UTC (09:00 in Phnom Penh)
+  workflow_dispatch:       # "Run workflow" button for a manual pull
+
+permissions:
+  contents: write          # to commit the new raw files, processed tables and fetch log
+
+concurrency:
+  group: scheduled-retrieval
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Pull World Bank and ODC (every pull is logged in data/fetch_log.csv)
+        run: python -m src.fetch
+
+      - name: Rebuild processed tables
+        run: python -m src.pipeline
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw/worldbank data/raw/odc data/processed data/boundaries data/fetch_log.csv
+          git diff --cached --quiet || git commit -m "Scheduled retrieval $(date -u +%Y-%m-%d)"
+          git push

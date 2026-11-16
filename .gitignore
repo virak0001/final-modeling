@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw news workbook: contains copyrighted article text and victims' details. Never publish it.
+data/raw/news/
+
+# Uploads made on a local run (commit a file here deliberately if it should become part of the portal)
+data/uploads/*
+!data/uploads/.gitkeep
+data/upload_log.csv
+
+# Streamlit secrets (API keys go in the host's secrets settings, never in code)
+.streamlit/secrets.toml
+
+# deck build dependencies
+presentation/node_modules/
+presentation/package-lock.json

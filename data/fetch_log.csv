@@ -1,0 +1,13 @@
+retrieved_at_utc,source,url,rows,status,message
+2026-11-08T06:47:50Z,World Bank SH.STA.TRAF.P5,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SH.STA.TRAF.P5,220,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T06:47:50Z,World Bank SP.POP.TOTL,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SP.POP.TOTL,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T06:47:51Z,World Bank SP.URB.TOTL.IN.ZS,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SP.URB.TOTL.IN.ZS,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T06:47:52Z,World Bank NY.GDP.PCAP.CD,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/NY.GDP.PCAP.CD,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T06:48:22Z,ODC GeoServer census 2019 provinces,https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/ows,25,ok,
+2026-11-08T06:48:23Z,ODC CKAN package population-census-2019-final-population-totals,https://data.opendevelopmentcambodia.net/en/api/3/action/package_show,1,ok,licence cc-by-sa
+2026-11-08T08:00:48Z,World Bank SH.STA.TRAF.P5,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SH.STA.TRAF.P5,220,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T08:00:49Z,World Bank SP.POP.TOTL,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SP.POP.TOTL,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T08:00:50Z,World Bank SP.URB.TOTL.IN.ZS,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/SP.URB.TOTL.IN.ZS,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T08:00:51Z,World Bank NY.GDP.PCAP.CD,https://api.worldbank.org/v2/country/BRN;KHM;IDN;LAO;MYS;MMR;PHL;SGP;THA;TLS;VNM/indicator/NY.GDP.PCAP.CD,396,ok,"396 country-years, last updated 2026-10-08"
+2026-11-08T08:01:51Z,ODC GeoServer census 2019 provinces,https://data.opendevelopmentcambodia.net/geoserver/ODCambodia/ows,25,ok,
+2026-11-08T08:01:52Z,ODC CKAN package population-census-2019-final-population-totals,https://data.opendevelopmentcambodia.net/en/api/3/action/package_show,1,ok,licence cc-by-sa

@@ -1,0 +1,7 @@
+step,rows_left,rows_right,rows_after,unmatched_left,key,grain
+News crashes x name-matching table,814,25,794,0,province name -> pro_code,crash
+Unlocated crashes (no province in text),814,0,794,20,-,crash
+Census layer x name-matching table,25,25,25,0,census name -> pro_code,province
+Province crash totals x census population,25,25,25,0,pro_code,province (2018-2024)
+Census population x World Bank national population,25,36,175,0,year (national growth factor),province-year
+Annual news totals x official totals x WHO modelled deaths,13,5,5,0,year,year

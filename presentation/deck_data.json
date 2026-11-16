@@ -1,0 +1,889 @@
+{
+    "h1a": {
+        "fatal_share_outside": 0.5533333333333333,
+        "fatal_share_inside": 0.23919308357348704,
+        "n_outside": 300,
+        "n_inside": 347,
+        "z": 8.189547009736897,
+        "p_value_one_sided": 1.1102230246251565e-16,
+        "ratio": 2.3133333333333335
+    },
+    "h1b": {
+        "chi2": 1375.9848403058527,
+        "p_value": 6.728871920212061e-276,
+        "capital_report_share": 56.293222683264176,
+        "capital_population_share": 14.67283976535555,
+        "capital_rate": 2.476029075153404,
+        "rest_rate": 0.3305790263707003,
+        "rate_ratio": 7.489976307138335,
+        "spearman_density_rate": -0.09230769230769231,
+        "spearman_p": 0.6607713531148642
+    },
+    "h2": {
+        "year": 2019,
+        "khm_change": 1.7000000000000028,
+        "khm_rate": 19.6,
+        "khm_rank": 5,
+        "members": 11,
+        "others_fell": 7,
+        "others": 10
+    },
+    "coverage": {
+        "years": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2024
+        ],
+        "news": [
+            21.0,
+            47.0,
+            56.0,
+            79.0,
+            159.0
+        ],
+        "official": [
+            1646.0,
+            1497.0,
+            1709.0,
+            1590.0,
+            1509.0
+        ],
+        "news_reports": [
+            44,
+            171,
+            156,
+            55,
+            189
+        ],
+        "official_crashes": [
+            3176,
+            2670,
+            2976,
+            3317,
+            2844
+        ]
+    },
+    "monthly": {
+        "labels": [
+            "Jan 18",
+            "Feb 18",
+            "Mar 18",
+            "Apr 18",
+            "May 18",
+            "Jun 18",
+            "Jul 18",
+            "Aug 18",
+            "Sep 18",
+            "Oct 18",
+            "Nov 18",
+            "Dec 18",
+            "Jan 19",
+            "Feb 19",
+            "Mar 19",
+            "Apr 19",
+            "May 19",
+            "Jun 19",
+            "Jul 19",
+            "Aug 19",
+            "Sep 19",
+            "Oct 19",
+            "Nov 19",
+            "Dec 19",
+            "Jan 20",
+            "Feb 20",
+            "Mar 20",
+            "Apr 20",
+            "May 20",
+            "Jun 20",
+            "Jul 20",
+            "Aug 20",
+            "Sep 20",
+            "Oct 20",
+            "Nov 20",
+            "Dec 20",
+            "Jan 21",
+            "Feb 21",
+            "Mar 21",
+            "Apr 21",
+            "May 21",
+            "Jun 21",
+            "Jul 21",
+            "Aug 21",
+            "Sep 21",
+            "Oct 21",
+            "Nov 21",
+            "Dec 21",
+            "Jan 22",
+            "Feb 22",
+            "Mar 22",
+            "Apr 22",
+            "May 22",
+            "Jun 22",
+            "Jul 22",
+            "Aug 22",
+            "Sep 22",
+            "Oct 22",
+            "Nov 22",
+            "Dec 22",
+            "Jan 23",
+            "Feb 23",
+            "Mar 23",
+            "Apr 23",
+            "May 23",
+            "Jun 23",
+            "Jul 23",
+            "Aug 23",
+            "Sep 23",
+            "Oct 23",
+            "Nov 23",
+            "Dec 23",
+            "Jan 24",
+            "Feb 24",
+            "Mar 24",
+            "Apr 24",
+            "May 24",
+            "Jun 24",
+            "Jul 24",
+            "Aug 24",
+            "Sep 24",
+            "Oct 24",
+            "Nov 24",
+            "Dec 24"
+        ],
+        "values": [
+            0.0,
+            3.0,
+            4.0,
+            3.0,
+            0.0,
+            11.0,
+            15.0,
+            25.0,
+            9.0,
+            9.0,
+            5.0,
+            1.0,
+            4.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            5.0,
+            7.0,
+            6.0,
+            8.0,
+            3.0,
+            1.0,
+            2.0,
+            2.0,
+            0.0,
+            2.0,
+            2.0,
+            7.0,
+            16.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            5.0,
+            4.0,
+            4.0,
+            2.0,
+            2.0,
+            1.0,
+            6.0,
+            3.0,
+            4.0,
+            3.0,
+            3.0,
+            42.0,
+            46.0,
+            55.0,
+            44.0,
+            14.0,
+            18.0,
+            20.0,
+            9.0,
+            17.0,
+            5.0,
+            12.0,
+            5.0,
+            6.0,
+            4.0,
+            2.0,
+            5.0,
+            0.0,
+            5.0,
+            3.0,
+            7.0,
+            4.0,
+            5.0,
+            7.0,
+            3.0,
+            2.0,
+            8.0,
+            6.0,
+            6.0,
+            10.0,
+            10.0,
+            8.0,
+            5.0,
+            12.0,
+            10.0,
+            18.0,
+            28.0,
+            40.0,
+            40.0,
+            2.0
+        ]
+    },
+    "yearly": {
+        "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024"
+        ],
+        "values": [
+            85.0,
+            36.0,
+            44.0,
+            171.0,
+            156.0,
+            55.0,
+            189.0
+        ]
+    },
+    "forecast": {
+        "mae_model": 10.773782071457319,
+        "mae_naive": 12.166666666666666,
+        "mase": 1.0293422361264954,
+        "flagged": 8,
+        "months": 84,
+        "flagged_months": [
+            "Aug 2018",
+            "Oct 2021",
+            "Nov 2021",
+            "Dec 2021",
+            "Jan 2022",
+            "Sep 2024",
+            "Oct 2024",
+            "Nov 2024"
+        ],
+        "test_labels": [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+        ],
+        "actual": [
+            6.0,
+            10.0,
+            10.0,
+            8.0,
+            5.0,
+            12.0,
+            10.0,
+            18.0,
+            28.0,
+            40.0,
+            40.0,
+            2.0
+        ],
+        "model": [
+            6.8,
+            2.3,
+            4.4,
+            3.4,
+            3.9,
+            9.3,
+            6.4,
+            7.4,
+            5.2,
+            6.3,
+            7.3,
+            5.5
+        ],
+        "naive": [
+            5.0,
+            0.0,
+            5.0,
+            3.0,
+            7.0,
+            4.0,
+            5.0,
+            7.0,
+            3.0,
+            2.0,
+            8.0,
+            6.0
+        ]
+    },
+    "asean": {
+        "countries": [
+            "Brunei",
+            "Thailand",
+            "Singapore",
+            "Malaysia",
+            "Indonesia",
+            "Timor-Leste",
+            "Myanmar",
+            "Cambodia",
+            "Philippines",
+            "Lao PDR",
+            "Viet Nam"
+        ],
+        "change": [
+            -8.4,
+            -6.8,
+            -4.4,
+            -4.3,
+            -3.2,
+            -2.6,
+            -0.5,
+            1.7,
+            2.2,
+            4.1,
+            6.5
+        ],
+        "iso": [
+            "BRN",
+            "THA",
+            "SGP",
+            "MYS",
+            "IDN",
+            "TLS",
+            "MMR",
+            "KHM",
+            "PHL",
+            "LAO",
+            "VNM"
+        ],
+        "rate": [
+            7.5,
+            32.2,
+            2.1,
+            22.5,
+            11.3,
+            11.9,
+            20.4,
+            19.6,
+            12.0,
+            17.9,
+            30.6
+        ]
+    },
+    "top": {
+        "prov": [
+            "Phnom Penh",
+            "Preah Sihanouk",
+            "Siem Reap",
+            "Battambang",
+            "Kampong Speu",
+            "Kandal",
+            "Pursat",
+            "Kampot"
+        ],
+        "report": [
+            56.3,
+            10.5,
+            4.7,
+            4.4,
+            3.9,
+            2.4,
+            2.2,
+            2.1
+        ],
+        "pop": [
+            14.7,
+            2.0,
+            6.5,
+            6.4,
+            5.6,
+            7.7,
+            2.7,
+            3.8
+        ]
+    },
+    "road": {
+        "type": [
+            "City street",
+            "Unclassified",
+            "Unknown",
+            "Local road",
+            "National road"
+        ],
+        "fatal": [
+            22.0,
+            30.0,
+            38.0,
+            54.0,
+            56.0
+        ],
+        "n": [
+            126,
+            240,
+            71,
+            26,
+            186
+        ]
+    },
+    "rare": {
+        "trained_at_utc": "2026-11-14 15:23 UTC",
+        "target": "Crash with two or more deaths (multi-fatality)",
+        "train_years": "2018-2023",
+        "test_year": 2024,
+        "train_rows": 477,
+        "test_rows": 180,
+        "base_rate_train": 0.09433962264150944,
+        "base_rate_test": 0.14444444444444443,
+        "positives_test": 26,
+        "candidates": {
+            "Class weights, no resampling": {
+                "cv_pr_auc": 0.39181519837145473,
+                "C": 0.3
+            },
+            "Random oversampling inside folds": {
+                "cv_pr_auc": 0.38995313189982983,
+                "C": 0.03
+            }
+        },
+        "chosen": "Class weights, no resampling",
+        "cost_miss": 5.0,
+        "cost_false_alarm": 1.0,
+        "threshold": 0.54,
+        "threshold_by_cost_ratio": {
+            "2": 0.7,
+            "5": 0.54,
+            "10": 0.36
+        },
+        "test_precision": 0.34545454545454546,
+        "test_recall": 0.7307692307692307,
+        "test_flagged": 55,
+        "test_pr_auc": 0.4658451131243291,
+        "test_roc_auc": 0.8101898101898102,
+        "accuracy_if_always_no": 0.8555555555555556,
+        "test_accuracy": 0.7611111111111111,
+        "recall_phnom_penh": 0.0,
+        "recall_other_provinces": 0.7916666666666666,
+        "flag_rate_phnom_penh": 0.0,
+        "flag_rate_other": 0.6626506024096386,
+        "encoder_widths": {
+            "time_of_day": 5,
+            "day_type": 2,
+            "season": 2,
+            "province_group": 6,
+            "road_type": 6
+        },
+        "n_features_after_encoding": 46,
+        "features": [
+            "time_of_day",
+            "day_type",
+            "season",
+            "province_group",
+            "road_type",
+            "n_vehicle_types",
+            "intersection",
+            "veh_motorcycle",
+            "veh_car_or_light_vehicle",
+            "veh_heavy_truck",
+            "veh_bus_or_van",
+            "veh_tuk_tuk",
+            "veh_pedestrian",
+            "veh_tractor",
+            "factor_speeding",
+            "factor_drunk_driving",
+            "factor_careless_driving",
+            "factor_wrong_way",
+            "factor_overtaking",
+            "factor_lost_control",
+            "factor_brake_failure",
+            "factor_fatigue",
+            "factor_wet_road_or_rain",
+            "factor_turning_or_crossing",
+            "col_rollover",
+            "col_rear_end",
+            "col_head_on",
+            "col_side",
+            "col_ran_off_road",
+            "col_fixed_object"
+        ],
+        "feature_rule": "A feature group is dropped only if the model does better without it by more than one fold standard deviation of the full model (5-fold CV PR-AUC on the training years). A loss, or a change inside that noise, keeps the group.",
+        "feature_check": [
+            {
+                "without": "nothing (all features)",
+                "n_features": 30,
+                "cv_pr_auc": 0.3918,
+                "fold_sd": 0.0403,
+                "change": 0.0
+            },
+            {
+                "without": "province",
+                "n_features": 29,
+                "cv_pr_auc": 0.3367,
+                "fold_sd": 0.0441,
+                "change": -0.0551
+            },
+            {
+                "without": "road type",
+                "n_features": 29,
+                "cv_pr_auc": 0.3726,
+                "fold_sd": 0.04,
+                "change": -0.0193
+            },
+            {
+                "without": "time of day",
+                "n_features": 29,
+                "cv_pr_auc": 0.3991,
+                "fold_sd": 0.0441,
+                "change": 0.0073
+            },
+            {
+                "without": "day type",
+                "n_features": 29,
+                "cv_pr_auc": 0.4049,
+                "fold_sd": 0.0785,
+                "change": 0.0131
+            },
+            {
+                "without": "season",
+                "n_features": 29,
+                "cv_pr_auc": 0.3877,
+                "fold_sd": 0.0498,
+                "change": -0.0041
+            },
+            {
+                "without": "number of vehicle types",
+                "n_features": 29,
+                "cv_pr_auc": 0.3994,
+                "fold_sd": 0.0513,
+                "change": 0.0076
+            },
+            {
+                "without": "intersection",
+                "n_features": 29,
+                "cv_pr_auc": 0.3887,
+                "fold_sd": 0.0427,
+                "change": -0.0031
+            },
+            {
+                "without": "vehicle types",
+                "n_features": 23,
+                "cv_pr_auc": 0.3174,
+                "fold_sd": 0.042,
+                "change": -0.0744
+            },
+            {
+                "without": "stated factors",
+                "n_features": 20,
+                "cv_pr_auc": 0.3853,
+                "fold_sd": 0.0283,
+                "change": -0.0065
+            },
+            {
+                "without": "collision type",
+                "n_features": 24,
+                "cv_pr_auc": 0.3689,
+                "fold_sd": 0.0187,
+                "change": -0.0229
+            }
+        ],
+        "feature_groups_dropped": [],
+        "coefficients": [
+            {
+                "feature": "cat__province_group_Phnom Penh",
+                "coefficient": -1.1237
+            },
+            {
+                "feature": "cat__time_of_day_Night (21-04)",
+                "coefficient": -0.9329
+            },
+            {
+                "feature": "cat__province_group_Preah Sihanouk",
+                "coefficient": -0.9093
+            },
+            {
+                "feature": "flag__veh_tuk_tuk",
+                "coefficient": -0.7942
+            },
+            {
+                "feature": "flag__veh_pedestrian",
+                "coefficient": -0.6261
+            },
+            {
+                "feature": "flag__col_fixed_object",
+                "coefficient": -0.5897
+            },
+            {
+                "feature": "flag__veh_motorcycle",
+                "coefficient": -0.5363
+            },
+            {
+                "feature": "flag__factor_careless_driving",
+                "coefficient": -0.5049
+            },
+            {
+                "feature": "cat__road_type_City street",
+                "coefficient": -0.468
+            },
+            {
+                "feature": "cat__road_type_Local road",
+                "coefficient": -0.421
+            },
+            {
+                "feature": "flag__factor_brake_failure",
+                "coefficient": -0.314
+            },
+            {
+                "feature": "flag__intersection",
+                "coefficient": -0.3095
+            },
+            {
+                "feature": "cat__road_type_Unknown",
+                "coefficient": -0.2561
+            },
+            {
+                "feature": "cat__day_type_Weekday",
+                "coefficient": -0.238
+            },
+            {
+                "feature": "flag__factor_lost_control",
+                "coefficient": -0.1384
+            },
+            {
+                "feature": "flag__col_rear_end",
+                "coefficient": -0.1294
+            },
+            {
+                "feature": "flag__col_ran_off_road",
+                "coefficient": -0.1087
+            },
+            {
+                "feature": "flag__factor_wet_road_or_rain",
+                "coefficient": -0.0897
+            },
+            {
+                "feature": "cat__season_Rainy (May-Oct)",
+                "coefficient": -0.0832
+            },
+            {
+                "feature": "cat__road_type_Expressway",
+                "coefficient": -0.0478
+            },
+            {
+                "feature": "cat__province_group_Kandal",
+                "coefficient": -0.0385
+            },
+            {
+                "feature": "flag__col_head_on",
+                "coefficient": -0.0069
+            },
+            {
+                "feature": "flag__col_side",
+                "coefficient": 0.034
+            },
+            {
+                "feature": "flag__factor_turning_or_crossing",
+                "coefficient": 0.0372
+            },
+            {
+                "feature": "cat__season_Dry (Nov-Apr)",
+                "coefficient": 0.0824
+            },
+            {
+                "feature": "cat__time_of_day_Afternoon (12-16)",
+                "coefficient": 0.1906
+            },
+            {
+                "feature": "flag__factor_fatigue",
+                "coefficient": 0.2061
+            },
+            {
+                "feature": "flag__factor_wrong_way",
+                "coefficient": 0.2094
+            },
+            {
+                "feature": "cat__time_of_day_Evening (17-20)",
+                "coefficient": 0.2096
+            },
+            {
+                "feature": "flag__factor_drunk_driving",
+                "coefficient": 0.2177
+            },
+            {
+                "feature": "cat__day_type_Weekend",
+                "coefficient": 0.2372
+            },
+            {
+                "feature": "cat__time_of_day_Unknown",
+                "coefficient": 0.2466
+            },
+            {
+                "feature": "cat__province_group_Kampong Speu",
+                "coefficient": 0.2474
+            },
+            {
+                "feature": "num__n_vehicle_types",
+                "coefficient": 0.2685
+            },
+            {
+                "feature": "cat__time_of_day_Morning (05-11)",
+                "coefficient": 0.2853
+            },
+            {
+                "feature": "flag__veh_tractor",
+                "coefficient": 0.3491
+            },
+            {
+                "feature": "cat__road_type_Unclassified",
+                "coefficient": 0.386
+            },
+            {
+                "feature": "flag__factor_overtaking",
+                "coefficient": 0.4483
+            },
+            {
+                "feature": "flag__veh_bus_or_van",
+                "coefficient": 0.4593
+            },
+            {
+                "feature": "flag__col_rollover",
+                "coefficient": 0.5728
+            },
+            {
+                "feature": "flag__factor_speeding",
+                "coefficient": 0.6549
+            },
+            {
+                "feature": "flag__veh_car_or_light_vehicle",
+                "coefficient": 0.6939
+            },
+            {
+                "feature": "flag__veh_heavy_truck",
+                "coefficient": 0.7627
+            },
+            {
+                "feature": "cat__province_group_Siem Reap",
+                "coefficient": 0.7837
+            },
+            {
+                "feature": "cat__road_type_National road",
+                "coefficient": 0.806
+            },
+            {
+                "feature": "cat__province_group_Other",
+                "coefficient": 1.0397
+            }
+        ]
+    },
+    "pca1": 0.5496132347618151,
+    "pca_n": 11,
+    "n_raw": 1074,
+    "n_ready": 814,
+    "n_window": 736,
+    "deaths_window": 425.0,
+    "pca1_before": 0.527865864771644,
+    "corr_rule": {
+        "limit": 0.8,
+        "dropped": "deaths_per_100k_yr",
+        "kept": "reports_per_100k_yr",
+        "rho": 0.8636363636363636,
+        "n_kept": 7,
+        "n_all": 8
+    },
+    "feature_check": [
+        {
+            "without": "nothing (all features)",
+            "n_features": 30,
+            "cv_pr_auc": 0.3918,
+            "fold_sd": 0.0403,
+            "change": 0.0
+        },
+        {
+            "without": "province",
+            "n_features": 29,
+            "cv_pr_auc": 0.3367,
+            "fold_sd": 0.0441,
+            "change": -0.0551
+        },
+        {
+            "without": "road type",
+            "n_features": 29,
+            "cv_pr_auc": 0.3726,
+            "fold_sd": 0.04,
+            "change": -0.0193
+        },
+        {
+            "without": "time of day",
+            "n_features": 29,
+            "cv_pr_auc": 0.3991,
+            "fold_sd": 0.0441,
+            "change": 0.0073
+        },
+        {
+            "without": "day type",
+            "n_features": 29,
+            "cv_pr_auc": 0.4049,
+            "fold_sd": 0.0785,
+            "change": 0.0131
+        },
+        {
+            "without": "season",
+            "n_features": 29,
+            "cv_pr_auc": 0.3877,
+            "fold_sd": 0.0498,
+            "change": -0.0041
+        },
+        {
+            "without": "number of vehicle types",
+            "n_features": 29,
+            "cv_pr_auc": 0.3994,
+            "fold_sd": 0.0513,
+            "change": 0.0076
+        },
+        {
+            "without": "intersection",
+            "n_features": 29,
+            "cv_pr_auc": 0.3887,
+            "fold_sd": 0.0427,
+            "change": -0.0031
+        },
+        {
+            "without": "vehicle types",
+            "n_features": 23,
+            "cv_pr_auc": 0.3174,
+            "fold_sd": 0.042,
+            "change": -0.0744
+        },
+        {
+            "without": "stated factors",
+            "n_features": 20,
+            "cv_pr_auc": 0.3853,
+            "fold_sd": 0.0283,
+            "change": -0.0065
+        },
+        {
+            "without": "collision type",
+            "n_features": 24,
+            "cv_pr_auc": 0.3689,
+            "fold_sd": 0.0187,
+            "change": -0.0229
+        }
+    ],
+    "feature_rule": "A feature group is dropped only if the model does better without it by more than one fold standard deviation of the full model (5-fold CV PR-AUC on the training years). A loss, or a change inside that noise, keeps the group.",
+    "feature_groups_dropped": [],
+    "n_tests": 63
+}
