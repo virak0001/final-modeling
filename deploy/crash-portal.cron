@@ -1,0 +1,2 @@
+# Install on the server:  sudo cp deploy/crash-portal.cron /etc/cron.d/crash-portal
+*/15 * * * * ubuntu /opt/crash-portal/deploy/update.sh >> /home/ubuntu/crash-portal-update.log 2>&1

@@ -143,3 +143,11 @@ def test_store_upload_saves_rows_with_name_and_date(tmp_path):
     log = pd.read_csv(tmp_path / "log.csv")
     assert log.loc[0, "rows_accepted"] == 2 and log.loc[0, "rows_rejected"] == 1
     assert len(validate.load_uploads(tmp_path / "uploads")) == 2
+
+
+def test_upload_log_can_live_inside_the_uploads_folder(tmp_path):
+    """On the server the log sits in a sub-folder of the uploads volume: it must be created, and never read as data."""
+    uploads, log = tmp_path / "uploads", tmp_path / "uploads" / "log" / "upload_log.csv"
+    validate.store_upload(validate.validate_crash_upload(frame()), "a.csv", uploads, log)
+    assert pd.read_csv(log).loc[0, "rows_accepted"] == 1
+    assert len(validate.load_uploads(uploads)) == 1

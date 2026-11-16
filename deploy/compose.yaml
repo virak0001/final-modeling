@@ -6,6 +6,9 @@ services:
   portal:
     build: ..
     restart: unless-stopped
+    environment:
+      # Inside the uploads volume, in a sub-folder the loader does not read as data.
+      PORTAL_UPLOAD_LOG: /app/data/uploads/log/upload_log.csv
     volumes:
       - uploads:/app/data/uploads
 

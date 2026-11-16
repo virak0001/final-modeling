@@ -1,4 +1,5 @@
 """Paths and reference tables shared by the portal, the notebook and the tests."""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,8 @@ WORLDBANK_CSV = PROCESSED / "worldbank_asean.csv"
 OFFICIAL_TOTALS = REFERENCE / "official_totals.csv"
 PROVINCE_NAMES = REFERENCE / "province_names.csv"
 FETCH_LOG = DATA / "fetch_log.csv"
-UPLOAD_LOG = DATA / "upload_log.csv"
+# On the server the log sits on the uploads volume (see deploy/compose.yaml), so it survives a new version.
+UPLOAD_LOG = Path(os.environ.get("PORTAL_UPLOAD_LOG") or DATA / "upload_log.csv")
 JOIN_LOG = PROCESSED / "join_log.csv"
 RARE_EVENT_JSON = PROCESSED / "rare_event_results.json"
 RARE_EVENT_CASES = PROCESSED / "rare_event_test_cases.csv"

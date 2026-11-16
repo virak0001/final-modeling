@@ -30,9 +30,9 @@ Tests: `python -m pytest -q`. Notebook: open `notebooks/analysis.ipynb` and choo
 
 | Requirement | Where |
 |---|---|
-| Live on the web | Streamlit Community Cloud, entry point `app.py` |
+| Live on the web | https://cambodia-crash.xyz, no login; entry point `app.py`, hosted as described under "Deploy" |
 | Accepts uploads | **Upload data** page: checks columns, types and units; rejects duplicates within the file and rows already stored by an earlier upload; warns when a row matches a news-reported crash; lists rejected rows with every reason; stores accepted rows with the file name and date (`src/validate.py`) |
-| Fetches data on its own | `.github/workflows/fetch.yml` every Monday, plus a **Refresh now** button (limited to once per 15 minutes); every pull is logged in `data/fetch_log.csv` (`src/fetch.py`) |
+| Fetches data on its own | `.github/workflows/fetch.yml` every Monday, plus a **Refresh now** button (limited to once per 15 minutes); every pull is logged in `data/fetch_log.csv` (`src/fetch.py`). The live server picks up the job's commit within 15 minutes |
 | Map | Provinces from the ODC census 2019 layer, shaded by reports or deaths per 100,000 person-years or by fatal share, with quantile class breaks in the legend; ASEAN countries by WHO-modelled road deaths per 100,000 |
 | Time | Monthly series, STL trend and seasonal factors, change on a year earlier, a Holt-Winters forecast against a seasonal naive baseline on held-out 2024 |
 | Linked views | Clicking a province filters the time chart and cards; the period slider re-colours the map; clicking an ASEAN country redraws its path |
@@ -81,19 +81,25 @@ notebooks/analysis.ipynb        reproduces every number on the findings page
 notebooks/severity_model.ipynb  earlier CRISP-DM severity model (failed its pre-set criterion on 2024; kept for the record)
 tests/                          tests for validate.py, fetch.py and pipeline.py
 .github/workflows/fetch.yml     the scheduled retrieval
+Dockerfile, deploy/             the live server: containers, HTTPS, and the script that keeps it on the newest commit
 ```
 
 ## Deploy
 
 The portal runs on its own AWS Lightsail server (1 GB RAM, Singapore) as two Docker containers defined in
 `deploy/compose.yaml`: the app (`Dockerfile`) and Caddy (`deploy/Caddyfile`), which gets and renews the HTTPS certificate.
-DNS for `cambodia-crash.xyz` is in Route 53. To ship a new version after pushing to `main`:
+DNS for `cambodia-crash.xyz` is in Route 53.
+
+The server keeps itself on the newest commit of `main`: every 15 minutes cron runs `deploy/update.sh`, which rebuilds the
+containers only when `main` has moved. So a push, or the Monday retrieval job's commit, is live within about 15 minutes with no
+manual step. To set up a new server: install Docker, clone this repository to `/opt/crash-portal`, then
 
 ```bash
-ssh ubuntu@<server> 'cd /opt/crash-portal && git pull && docker compose -f deploy/compose.yaml up -d --build'
+docker compose -f deploy/compose.yaml up -d --build
+sudo cp deploy/crash-portal.cron /etc/cron.d/crash-portal
 ```
 
-Uploaded files live in the `uploads` Docker volume, so they survive restarts and new versions.
+Uploaded files and the upload log live in the `uploads` Docker volume, so they survive restarts and new versions.
 
 No API keys are needed. If one is ever added, pass it to the container as an environment variable, never in the code.
 To make an upload part of the repository itself, copy its file out of the volume and commit it under `data/uploads/`.

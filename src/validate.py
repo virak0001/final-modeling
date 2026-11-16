@@ -278,6 +278,7 @@ def store_upload(result: UploadResult, file_name: str, upload_dir: Path | None =
              "rows_received": result.rows_received, "rows_accepted": len(result.accepted),
              "rows_rejected": len(result.rejected)}
     log_path = Path(log_path or config.UPLOAD_LOG)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
     new_file = not log_path.exists()
     with log_path.open("a", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(entry))
