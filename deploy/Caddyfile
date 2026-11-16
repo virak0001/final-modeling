@@ -1,0 +1,8 @@
+cambodia-crash.xyz {
+	encode zstd gzip
+	reverse_proxy portal:8501
+}
+
+www.cambodia-crash.xyz {
+	redir https://cambodia-crash.xyz{uri} permanent
+}

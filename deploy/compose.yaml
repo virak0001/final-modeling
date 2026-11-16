@@ -1,0 +1,28 @@
+# Production stack: the portal behind Caddy, which gets and renews the HTTPS certificate.
+# On the server: cd /opt/crash-portal && git pull && docker compose -f deploy/compose.yaml up -d --build
+name: crash-portal
+
+services:
+  portal:
+    build: ..
+    restart: unless-stopped
+    volumes:
+      - uploads:/app/data/uploads
+
+  caddy:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    depends_on:
+      - portal
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  uploads:
+  caddy_data:
+  caddy_config:

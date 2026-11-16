@@ -85,17 +85,15 @@ tests/                          tests for validate.py, fetch.py and pipeline.py
 
 ## Deploy
 
-The portal runs in a Docker container (`Dockerfile`) on a small AWS Lightsail server, behind Caddy, which handles HTTPS.
+The portal runs on its own AWS Lightsail server (1 GB RAM, Singapore) as two Docker containers defined in
+`deploy/compose.yaml`: the app (`Dockerfile`) and Caddy (`deploy/Caddyfile`), which gets and renews the HTTPS certificate.
 DNS for `cambodia-crash.xyz` is in Route 53. To ship a new version after pushing to `main`:
 
 ```bash
-ssh ubuntu@<server> 'cd /opt/crash-portal && git pull && sudo docker build -q -t crash-portal . &&
-  sudo docker rm -f crash-portal && sudo docker run -d --name crash-portal --restart unless-stopped \
-  --network smtp-box_default --memory 350m --memory-swap 1500m \
-  -v crash-portal-uploads:/app/data/uploads crash-portal'
+ssh ubuntu@<server> 'cd /opt/crash-portal && git pull && docker compose -f deploy/compose.yaml up -d --build'
 ```
 
-Uploaded files live in the `crash-portal-uploads` Docker volume, so they survive restarts and new versions.
+Uploaded files live in the `uploads` Docker volume, so they survive restarts and new versions.
 
 No API keys are needed. If one is ever added, pass it to the container as an environment variable, never in the code.
 To make an upload part of the repository itself, copy its file out of the volume and commit it under `data/uploads/`.
