@@ -1,0 +1,11 @@
+.git
+.venv
+.pytest_cache
+**/__pycache__
+.ipynb_checkpoints
+presentation
+data/raw/news
+data/uploads/*
+!data/uploads/.gitkeep
+data/upload_log.csv
+.streamlit/secrets.toml
